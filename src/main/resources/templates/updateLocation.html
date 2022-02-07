@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Location</title>
+</head>
+<body>
+
+<form action="updateLocation" method="post" >
+    <pre>
+    ID: <input type="text" name="id" th:value="${location.id}" readonly/>
+    Code: <input type="text" name="code" th:value="${location.code}"/>
+    Name: <input type="text" name="name" th:value=${location.name} />
+    Type: Urban<input type="radio" name="type" th:value="URBAN" location.type=='URBAN'?'checked':'' />
+          Rural<input type="radio" name="type" th:value="RURAL" ${location.type=='RURAL'?checked:''} />
+    <input type="submit" value="save"/>
+    </pre>
+    <div></div>
+    <a href="displayLocations">View All</a>
+</form >
+
+</body>
+</html>

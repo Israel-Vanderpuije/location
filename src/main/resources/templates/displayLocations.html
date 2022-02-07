@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Locations</title>
+</head>
+<body>
+
+<h2>Locations:</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>CODE</th>
+    <th>NAME</th>
+    <th>TYPE</th>
+  </tr>
+  <tr th:each="location: ${locations}">
+      <td th:text="${location.id}"></td>
+      <td th:text="${location.code}"></td>
+      <td th:text="${location.name}"></td>
+      <td th:text="${location.type}"></td>
+      <td><a th:href="@{deleteLocation(id=${location.id})}">Delete</a></td>
+      <td><a th:href="@{showUpdate(id=${location.id})}">Update</a></td>
+  </tr>
+</table>
+
+<a href="showCreate">Add location</a>
+
+</body>
+</html>
